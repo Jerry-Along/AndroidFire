@@ -45,4 +45,8 @@ dependencies {
     api project(':library:selectordialog')//常用提示框
     api project(':library:EasyAdapterlib')
 
+    //view注解
+    api 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+
 }

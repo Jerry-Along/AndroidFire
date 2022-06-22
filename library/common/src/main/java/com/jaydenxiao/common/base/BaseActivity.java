@@ -9,6 +9,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import butterknife.ButterKnife;
+
 import android.view.Window;
 
 import com.jaydenxiao.common.BuildConfig;
@@ -22,7 +24,6 @@ import com.jaydenxiao.common.commonwidget.StatusBarCompat;
 import com.jaydenxiao.common.daynightmodeutils.ChangeModeController;
 import com.umeng.analytics.MobclickAgent;
 
-import butterknife.ButterKnife;
 
 /**
  * 基类
