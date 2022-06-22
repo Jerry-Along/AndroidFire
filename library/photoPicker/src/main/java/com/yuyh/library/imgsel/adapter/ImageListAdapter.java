@@ -13,7 +13,6 @@ import com.yuyh.easyadapter.recyclerview.EasyRVHolder;
 import com.yuyh.library.imgsel.ImgSelConfig;
 import com.yuyh.library.imgsel.R;
 import com.yuyh.library.imgsel.bean.Image;
-import com.yuyh.library.imgsel.common.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +45,7 @@ public class ImageListAdapter extends EasyRVAdapter<Image> {
             @Override
             public void onClick(View v) {
                 if (listener != null)
-                    listener.onClick(position, item);
+                    listener.onItemClick(v, position, item);
             }
         });
 

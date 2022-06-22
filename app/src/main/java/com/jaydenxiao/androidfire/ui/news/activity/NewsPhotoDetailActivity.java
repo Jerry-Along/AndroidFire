@@ -5,9 +5,6 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
@@ -22,7 +19,11 @@ import com.jaydenxiao.common.commonwidget.ViewPagerFixed;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
+import butterknife.BindView;
 import rx.functions.Action1;
 
 /**
@@ -31,11 +32,11 @@ import rx.functions.Action1;
  * on 2016.09.9:54
  */
 public class NewsPhotoDetailActivity extends BaseActivity {
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.viewpager)
+    @BindView(R.id.viewpager)
     ViewPagerFixed viewpager;
-    @Bind(R.id.photo_detail_title_tv)
+    @BindView(R.id.photo_detail_title_tv)
     TextView photoDetailTitleTv;
 
     private List<Fragment> mPhotoDetailFragmentList = new ArrayList<>();

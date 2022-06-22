@@ -1,6 +1,5 @@
 package com.jaydenxiao.common.baserx;
 
-import android.support.annotation.NonNull;
 
 import com.jaydenxiao.common.commonutils.LogUtils;
 
@@ -9,6 +8,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
+import androidx.annotation.NonNull;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;

@@ -9,14 +9,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.ListPopupWindow;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.yuyh.easyadapter.recyclerview.EasyRVAdapter;
 import com.yuyh.library.imgsel.adapter.FolderListAdapter;
 import com.yuyh.library.imgsel.adapter.ImageListAdapter;
 import com.yuyh.library.imgsel.bean.Folder;
@@ -39,6 +32,15 @@ import com.yuyh.library.imgsel.widget.DividerGridItemDecoration;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.ListPopupWindow;
+import androidx.fragment.app.Fragment;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.CursorLoader;
+import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class ImgSelFragment extends Fragment implements View.OnClickListener {
@@ -101,34 +103,39 @@ public class ImgSelFragment extends Fragment implements View.OnClickListener {
         imageListAdapter.setShowCamera(config.needCamera);
         imageListAdapter.setMutiSelect(config.multiSelect);
         rvImageList.setAdapter(imageListAdapter);
-        imageListAdapter.setOnItemClickListener(new OnItemClickListener() {
+
+        imageListAdapter.setOnItemClickListener(new EasyRVAdapter.OnItemClickListener() {
             @Override
-            public void onClick(int position, Image image) {
+            public void onItemClick(View view, int position, Object obj) {
                 if (config.needCamera && position == 0) {
                     showCameraAction();
                 } else {
-                    if (image != null) {
-                        if (config.multiSelect) {
-                            if (Constant.imageList.contains(image.path)) {
-                                Constant.imageList.remove(image.path);
-                                if (callback != null) {
-                                    callback.onImageUnselected(image.path);
-                                }
-                            } else {
-                                if (config.maxNum <= Constant.imageList.size()) {
-                                    Toast.makeText(getActivity(), "最多选择" + config.maxNum + "张图片", Toast.LENGTH_SHORT).show();
-                                    return;
-                                }
+                    if (obj != null) {
+                        if (obj  instanceof Image){
+                           Image image= (Image) obj;
 
-                                Constant.imageList.add(image.path);
-                                if (callback != null) {
-                                    callback.onImageSelected(image.path);
+                            if (config.multiSelect) {
+                                if (Constant.imageList.contains(image.path)) {
+                                    Constant.imageList.remove(image.path);
+                                    if (callback != null) {
+                                        callback.onImageUnselected(image.path);
+                                    }
+                                } else {
+                                    if (config.maxNum <= Constant.imageList.size()) {
+                                        Toast.makeText(getActivity(), "最多选择" + config.maxNum + "张图片", Toast.LENGTH_SHORT).show();
+                                        return;
+                                    }
+
+                                    Constant.imageList.add(image.path);
+                                    if (callback != null) {
+                                        callback.onImageSelected(image.path);
+                                    }
                                 }
-                            }
-                            imageListAdapter.select(image,position);
-                        } else {
-                            if (callback != null) {
-                                callback.onSingleImageSelected(image.path);
+                                imageListAdapter.select(image,position);
+                            } else {
+                                if (callback != null) {
+                                    callback.onSingleImageSelected(image.path);
+                                }
                             }
                         }
                     }

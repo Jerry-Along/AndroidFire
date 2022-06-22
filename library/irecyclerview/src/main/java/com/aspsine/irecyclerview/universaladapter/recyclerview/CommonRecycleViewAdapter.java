@@ -2,7 +2,6 @@ package com.aspsine.irecyclerview.universaladapter.recyclerview;
 
 import android.animation.Animator;
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +17,8 @@ import com.aspsine.irecyclerview.animation.BaseAnimation;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by zhy on 16/4/9.

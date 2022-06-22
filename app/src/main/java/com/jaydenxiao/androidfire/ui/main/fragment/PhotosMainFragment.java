@@ -1,7 +1,5 @@
 package com.jaydenxiao.androidfire.ui.main.fragment;
 
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -13,6 +11,7 @@ import com.aspsine.irecyclerview.universaladapter.recyclerview.CommonRecycleView
 import com.aspsine.irecyclerview.widget.LoadMoreFooterView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.jaydenxiao.androidfire.R;
 import com.jaydenxiao.androidfire.bean.PhotoGirl;
 import com.jaydenxiao.androidfire.ui.news.activity.PhotosDetailActivity;
@@ -25,7 +24,9 @@ import com.jaydenxiao.common.commonwidget.NormalTitleBar;
 
 import java.util.List;
 
-import butterknife.Bind;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+import butterknife.BindView;
+
 
 /**
  * des:图片首页
@@ -33,13 +34,13 @@ import butterknife.Bind;
  * on 2016.09.11:49
  */
 public class PhotosMainFragment extends BaseFragment<PhotosListPresenter,PhotosListModel> implements PhotoListContract.View ,OnRefreshListener,OnLoadMoreListener{
-    @Bind(R.id.ntb)
+    @BindView(R.id.ntb)
     NormalTitleBar ntb;
-    @Bind(R.id.irc)
+    @BindView(R.id.irc)
     IRecyclerView irc;
-    @Bind(R.id.loadedTip)
+    @BindView(R.id.loadedTip)
     LoadingTip loadedTip;
-    @Bind(R.id.fab)
+    @BindView(R.id.fab)
     FloatingActionButton fab;
     private CommonRecycleViewAdapter<PhotoGirl>adapter;
     private static int SIZE = 20;

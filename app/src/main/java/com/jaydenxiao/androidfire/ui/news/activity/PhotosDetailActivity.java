@@ -5,9 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.RelativeLayout;
@@ -21,7 +18,11 @@ import com.jaydenxiao.androidfire.utils.SystemUiVisibilityUtil;
 import com.jaydenxiao.androidfire.widget.PullBackLayout;
 import com.jaydenxiao.common.commonwidget.StatusBarCompat;
 
-import butterknife.Bind;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import uk.co.senab.photoview.PhotoView;
 import uk.co.senab.photoview.PhotoViewAttacher;
@@ -34,13 +35,13 @@ import uk.co.senab.photoview.PhotoViewAttacher;
 public class PhotosDetailActivity extends AppCompatActivity implements PullBackLayout.Callback {
 
 
-    @Bind(R.id.photo_touch_iv)
+    @BindView(R.id.photo_touch_iv)
     PhotoView photoTouchIv;
-    @Bind(R.id.pull_back_layout)
+    @BindView(R.id.pull_back_layout)
     PullBackLayout pullBackLayout;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.background)
+    @BindView(R.id.background)
     RelativeLayout background;
     private boolean mIsToolBarHidden;
     private boolean mIsStatusBarHidden;
@@ -66,7 +67,6 @@ public class PhotosDetailActivity extends AppCompatActivity implements PullBackL
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 
     public void initView() {

@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Handler;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -46,7 +44,10 @@ import com.jaydenxiao.common.commonwidget.NormalTitleBar;
 
 import java.util.List;
 
-import butterknife.Bind;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import butterknife.OnLongClick;
 
@@ -59,32 +60,32 @@ import butterknife.OnLongClick;
 public class CircleZoneActivity extends BaseActivity<CircleZonePresenter, ZoneModel> implements CircleZoneContract.View, View.OnClickListener {
 
 
-    @Bind(R.id.ntb)
+    @BindView(R.id.ntb)
     NormalTitleBar ntb;
-    @Bind(R.id.irc)
+    @BindView(R.id.irc)
     IRecyclerView irc;
-    @Bind(R.id.loadedTip)
+    @BindView(R.id.loadedTip)
     LoadingTip loadedTip;
-    @Bind(R.id.circleEt)
+    @BindView(R.id.circleEt)
     EditText circleEt;
-    @Bind(R.id.sendIv)
+    @BindView(R.id.sendIv)
     ImageView sendIv;
-    @Bind(R.id.editTextBodyLl)
+    @BindView(R.id.editTextBodyLl)
     LinearLayout editTextBodyLl;
 
     //朋友圈头部
     ZoneHeaderView zoneHeaderView;
-    @Bind(R.id.fab1)
+    @BindView(R.id.fab1)
     FloatingActionButton fab1;
-    @Bind(R.id.fab2)
+    @BindView(R.id.fab2)
     FloatingActionButton fab2;
-    @Bind(R.id.fab3)
+    @BindView(R.id.fab3)
     FloatingActionButton fab3;
-    @Bind(R.id.fab4)
+    @BindView(R.id.fab4)
     FloatingActionButton fab4;
-    @Bind(R.id.fab5)
+    @BindView(R.id.fab5)
     FloatingActionButton fab5;
-    @Bind(R.id.menu_red)
+    @BindView(R.id.menu_red)
     FloatingActionMenu menuRed;
 
     private CircleAdapter mAdapter;

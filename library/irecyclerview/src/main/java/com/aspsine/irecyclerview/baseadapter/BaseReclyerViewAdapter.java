@@ -2,7 +2,6 @@ package com.aspsine.irecyclerview.baseadapter;
 
 import android.animation.Animator;
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
@@ -13,6 +12,9 @@ import com.aspsine.irecyclerview.bean.PageBean;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
+
 
 /**
  * des:基础ReclyerView适配器
@@ -66,7 +68,7 @@ public class BaseReclyerViewAdapter<T> extends RecyclerView.Adapter<RecyclerView
      *
      * @param holder
      */
-    public void addAnimation(RecyclerView.ViewHolder holder) {
+    public void addAnimation(androidx.recyclerview.widget.RecyclerView.ViewHolder holder) {
         if (mOpenAnimationEnable) {
             if (holder.getLayoutPosition() > mLastPosition) {
                 BaseAnimation animation = null;

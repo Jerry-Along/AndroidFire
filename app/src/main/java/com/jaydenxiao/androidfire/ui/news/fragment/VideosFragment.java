@@ -1,7 +1,5 @@
 package com.jaydenxiao.androidfire.ui.news.fragment;
 
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +23,10 @@ import com.jaydenxiao.common.commonwidget.LoadingTip;
 
 import java.util.List;
 
-import butterknife.Bind;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import butterknife.BindView;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerManager;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
@@ -36,9 +37,9 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
  * on 2016.09.17:30
  */
 public class VideosFragment extends BaseFragment<VideoListPresenter, VideosListModel> implements VideosListContract.View, OnRefreshListener, OnLoadMoreListener {
-    @Bind(R.id.irc)
+    @BindView(R.id.irc)
     IRecyclerView irc;
-    @Bind(R.id.loadedTip)
+    @BindView(R.id.loadedTip)
     LoadingTip loadedTip;
     private CommonRecycleViewAdapter<VideoData> videoListAdapter;
 

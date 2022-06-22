@@ -1,7 +1,6 @@
 package com.aspsine.irecyclerview.universaladapter.recyclerview.support;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 
 import com.aspsine.irecyclerview.universaladapter.ViewHolderHelper;
 import com.aspsine.irecyclerview.universaladapter.recyclerview.MultiItemRecycleViewAdapter;
@@ -11,6 +10,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by zhy on 16/4/9.

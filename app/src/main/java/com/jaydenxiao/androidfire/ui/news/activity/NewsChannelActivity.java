@@ -1,15 +1,10 @@
 package com.jaydenxiao.androidfire.ui.news.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 
 import com.jaydenxiao.androidfire.R;
@@ -26,7 +21,14 @@ import com.jaydenxiao.common.base.BaseActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import butterknife.BindView;
 import rx.functions.Action1;
 
 /**
@@ -35,11 +37,11 @@ import rx.functions.Action1;
  * on 2016.09.11:51
  */
 public class NewsChannelActivity extends BaseActivity<NewsChanelPresenter, NewsChannelModel>implements NewsChannelContract.View{
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.news_channel_mine_rv)
+    @BindView(R.id.news_channel_mine_rv)
     RecyclerView newsChannelMineRv;
-    @Bind(R.id.news_channel_more_rv)
+    @BindView(R.id.news_channel_more_rv)
     RecyclerView newsChannelMoreRv;
 
     private ChannelAdapter channelAdapterMine;
@@ -92,6 +94,7 @@ public class NewsChannelActivity extends BaseActivity<NewsChanelPresenter, NewsC
         mPresenter.lodeChannelsRequest();
     }
 
+    @SuppressLint("WrongConstant")
     @Override
     public void returnMineNewsChannels(List<NewsChannelTable> newsChannelsMine) {
         channelAdapterMine = new ChannelAdapter(mContext,R.layout.item_news_channel);

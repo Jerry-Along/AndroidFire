@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Parcelable;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -27,6 +25,8 @@ import com.jaydenxiao.common.commonwidget.ViewPagerFixed;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import uk.co.senab.photoview.PhotoView;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
@@ -130,7 +130,7 @@ public class BigImagePagerActivity extends BaseActivity{
         }
     }
 
-    private  class ImageAdapter extends PagerAdapter{
+    private  class ImageAdapter extends PagerAdapter {
 
         private List<String> datas = new ArrayList<String>();
         private LayoutInflater inflater;

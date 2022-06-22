@@ -1,13 +1,14 @@
 package com.jaydenxiao.androidfire.ui.zone.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
 import com.aspsine.irecyclerview.baseadapter.BaseReclyerViewAdapter;
 import com.jaydenxiao.androidfire.ui.zone.bean.CircleItem;
 import com.jaydenxiao.androidfire.ui.zone.presenter.CircleZonePresenter;
 import com.jaydenxiao.androidfire.ui.zone.viewholder.ZoneViewHolder;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * des: 圈子列表的adapter

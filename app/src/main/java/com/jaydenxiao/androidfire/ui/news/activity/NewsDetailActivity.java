@@ -6,13 +6,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.Toolbar;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.content.ContextCompat;
 import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +19,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.jaydenxiao.androidfire.R;
 import com.jaydenxiao.androidfire.app.AppConstant;
 import com.jaydenxiao.androidfire.bean.NewsDetail;
@@ -35,7 +36,8 @@ import com.jaydenxiao.common.commonutils.TimeUtil;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import butterknife.Bind;
+
+import butterknife.BindView;
 import rx.Observable;
 import rx.Subscriber;
 
@@ -47,23 +49,23 @@ import rx.Subscriber;
 public class NewsDetailActivity extends BaseActivity<NewsDetailPresenter, NewsDetailModel> implements NewsDetailContract.View {
 
 
-    @Bind(R.id.news_detail_photo_iv)
+    @BindView(R.id.news_detail_photo_iv)
     ImageView newsDetailPhotoIv;
-    @Bind(R.id.mask_view)
+    @BindView(R.id.mask_view)
     View maskView;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.toolbar_layout)
+    @BindView(R.id.toolbar_layout)
     CollapsingToolbarLayout toolbarLayout;
-    @Bind(R.id.app_bar)
+    @BindView(R.id.app_bar)
     AppBarLayout appBar;
-    @Bind(R.id.news_detail_from_tv)
+    @BindView(R.id.news_detail_from_tv)
     TextView newsDetailFromTv;
-    @Bind(R.id.news_detail_body_tv)
+    @BindView(R.id.news_detail_body_tv)
     TextView newsDetailBodyTv;
-    @Bind(R.id.progress_bar)
+    @BindView(R.id.progress_bar)
     ProgressBar progressBar;
-    @Bind(R.id.fab)
+    @BindView(R.id.fab)
     FloatingActionButton fab;
     private String postId;
     private URLImageGetter mUrlImageGetter;

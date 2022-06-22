@@ -1,6 +1,5 @@
 package com.jaydenxiao.androidfire.ui.zone.adapter;
 
-import android.support.annotation.NonNull;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
@@ -15,6 +14,8 @@ import com.jaydenxiao.androidfire.ui.zone.spannable.NameClickable;
 import com.jaydenxiao.androidfire.ui.zone.widget.FavortListView;
 
 import java.util.List;
+
+import androidx.annotation.NonNull;
 
 
 /**
